@@ -48,3 +48,53 @@ for (let i=1; i<=5; i++) {
     if (i===3) continue;
     console.log(i)
 }
+
+
+
+//Multiple counter for single loop 
+for (let i=1, j=10; i<=10 &&j>=1;i++, j--){
+      console.log(i, j);
+}
+
+
+
+
+for (a=1; a<=5; a++){
+      console.log("*".repeat(a));
+}
+
+
+let rows = 5;
+
+for (let i = 1; i <= rows; i++) {
+    let pattern = "";
+    for (let j = 1; j <= i; j++) {
+        pattern += "* ";
+    }
+    console.log(pattern);
+}
+
+
+
+//while loop 
+let counter =1;
+while(counter<=5){
+      console.log(counter);
+      counter++;
+
+}
+
+//Do-While Loop 
+let num=1;
+do{
+      console.log(num);
+      num++;
+
+}while (num<=5)
+
+
+//Infinite loop 
+
+
+
+
