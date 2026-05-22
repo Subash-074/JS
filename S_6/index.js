@@ -81,7 +81,7 @@ function outer(){
      //inner();//inner function can be called and executed and used only insided of the outer function the scope is limited and inner function has specific purpose to serve inside outer function. 
 }
 
-let retFunc=Outer();
+let retFunc= outer();
 console.log(retFunc())
 
 
@@ -104,9 +104,82 @@ foo(function(){
 })
 
 //Pure Function 
+let greegingMsg=" Hola"
 function greeting(name){
-     return "Hello " +name; 
+     return greegingMsg +name; 
 }
 
 
-console.log(greeting("tapascript"));
+console.log(greeting(" tapascript"));
+
+greegingMsg=" Namaste"
+
+console.log(greeting(" tapascript"));
+
+//Higher Order Function 
+//Higher order function is a function that takes another function as an argument or return another function. 
+
+
+function getCamera(camera) {
+    camera();
+}
+
+getCamera(function() {
+    console.log("Sony")
+})
+
+function returnFunc(param) {
+    return function() {
+        if (param === 1) {
+            console.log("Hello")
+        }
+
+    }
+}
+
+const retFun = returnFunc(3);
+retFun();
+
+// Arrow Function
+
+let greetMe = (greetingMsg) => {
+    //
+    //
+    return greetingMsg + " great"
+}
+
+console.log(greetMe("Hola"));
+
+
+
+//IIFE(Immdeiately Invoked Function Expression )
+
+(function(count){
+    console.log("IIFE", count)
+})(1)
+
+
+//Call Stack 
+
+
+
+//Recursion
+//A function is calling itself that is recursion..
+
+
+function foo(){
+     foo();
+
+}
+
+
+
+function fetchWater(count){
+     console.log("Fetching Water...", count);
+     if(count===0){
+          console.log("No more water is left to fetch....");
+          return;
+     }
+     fetchWater(count-1)
+}
+fetchWater(5)
