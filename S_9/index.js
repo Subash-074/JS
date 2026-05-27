@@ -36,3 +36,5 @@ function chase(){
 function caught(){
       console.log("Tom caught Jerry");
 }
+
+
