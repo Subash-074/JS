@@ -1,7 +1,17 @@
-let number='*';
+//Type of Scope in JavaScript
+//Global Scope
+//Function Scope
+//Block Scope 
+//Module Scope
 
-function star(a){
-      for a in number 
-      a+=number.append();
-      console.log(a);
+
+//Global Scope
+//Variable declared outside of any function or bolck scope 
+//are in the global scope 
+
+
+let name="Tapas";  
+
+ function greeting(){
+      console.log("Hello")
 }
