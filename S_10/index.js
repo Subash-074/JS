@@ -67,7 +67,7 @@ todo();
 
 //The Block Scope 
 /*
-In case of block scope variable is declared inside of the block. whenever we create if else or switch case we declare a block . 
+In case of block scope variable is declared using let and const inside of the block which is accessible inside the block except for var it is accessible outside as well without any error . whenever we create if else or switch case we declare a block . 
 */
 
 {
@@ -76,5 +76,88 @@ In case of block scope variable is declared inside of the block. whenever we cre
 }
 // if we try to access count outside the block we are goint to get a refrence error. 
 //console.log(count)==refrence error 
+//but if we declare variable count using var instead of let we won't encounter refrence error. 
 
 
+
+//in summary
+/* if variable is declared....
+
+inside Global Scope, Var, let and const are accessible everywhere, 
+
+inside Function scope== var, let and const are accessible inside function only
+
+inside blocked scope ==let and const are accessible only inside blocked scope wherease var can be accessed outside as well. 
+*/
+
+
+
+//Scope Chain 
+/*
+IN scope chain js first search in the nearest scope, if variable is not available it goes one more level outside in this way this will reach in global scope.
+
+In many cases we will have function inside functions and variable of first function might be used in third function inside that function here this scope chain concepts comes in where js will go outside each step in search of variable value within the scope chain... 
+
+*/
+
+
+// Scope Chain
+
+let globalVar = "I am a Global Variable";
+
+function outer() {
+    let outerVar = "I am an Outer Variable";
+
+    function inner() {
+        let innerVar = "I am an Inner Variable";
+
+        console.log(innerVar); // "I am an Inner Variable"
+        console.log(outerVar); // "I am an Outer Variable"
+        console.log(globalVar); // "I am a Global Variable"
+    }
+
+    inner();
+}
+
+outer();
+
+//console.log(outerVar); // Reference Error
+
+
+
+var count = 10;
+
+function outer() {
+    // var count = 20;
+
+    function inner() {
+        //var count = 30;
+        console.log(count); // 10
+    }
+    inner();
+    console.log(count); // 10
+}
+
+outer();
+console.log(count); // 10
+
+
+//Variable Shadowing 
+/*
+Variable shadowing is a situation that happens when a variable in inner scope has same name as outer scope and then it will result in hiding outer scope variable in inner scope. 
+
+js will priorities the variable in nearest scope and ignore variable far from its scope. 
+
+
+
+*/
+
+let message = "I am doing great"
+
+function situation() {
+    let message = "I am not doing great"
+    console.log(message); // I am not doing great
+}
+
+situation();
+console.log(message); // I am doing great
