@@ -159,8 +159,41 @@ let profile ={
       name:"Subash",
       company:"Apple",
       message:function(){
-            console.log(`{this.name}`)
+            console.log(`{this.name} works at ${this.company}`)
+      },
+      address:{
+            city:"Kathmandu",
+            pin:1322,
+            state:"Bagmati",
+            country:"Nepal",
+
+            greeting:function(){
+                  console.log("Welcome to Nepal")
+            }
+
       }
+}
+
+console.log(profile.name);//Subash
+console.log(profile.company);//Apple
+profile.message();
+
+
+//Nested Objects
+//object inside another object is called nested object 
+
+console.log(profile.address.country);//Nepal
+console.log(profile.address.greeting);
+
+
+
+//The "in " operator 
+console.log(profile.salary);//undefined
+
+console.log("salary" in profile);//false there is no such key in object profile 
+//to check weather key exist or not in object of javascript we can use in operator.
+if(!profile.salary){
+      console.log("salary property doesn't exist");
 }
 
 
@@ -169,13 +202,42 @@ let profile ={
 
 
 
-//Nested Objects
-//The "in " operator 
+
+
 //The for...in loop 
+for (let key in profile){
+      console.log(key);
+      console.log(profile[key]);
+}
 //Object.keys() method 
+console.log(objects.keys(profile));
+
+
+
+
 //Object Refrences 
-//B.R.E.A.K
+const fruit={name: "mango"};
+const oneMoreFruit={name:"mango"};
+//although both objects have same value but they have different memory address so when you do 
+
+console.log(fruit===oneMoreFruit);//false
+
+//however, if we do 
+fruit=oneMoreFruit;
+//then,
+console.log(fruit=oneMoreFruit);//true because they will now point to same memory address
+
+
+
+
+
+
+
+
+
+
 //Object.assign()
+
 //Shallow Copy vs Deep Copy
 //Convert and object to an array 
 //Concert Map or Array ro object 
