@@ -124,6 +124,7 @@ function createUser(name, age){
       return{
             name, //you don't need to do like name:name this is shorthand feature. this is done when key name and parameters are same.
             age, 
+
       }
 }
 
@@ -139,7 +140,28 @@ console.log(user2)
 
 //let's create an object whose value can be one function, whose value can be another object ,also also whose value can be an array.
 
+function newUser(name, age){
+      return{
+            name, 
+            age,
+      }
+      function greet() {
+            console.log(this.name);
+      }
 
+}
+
+const customer=newUser("Shovakhar",  35)
+customer.name;
+
+ 
+let profile ={
+      name:"Subash",
+      company:"Apple",
+      message:function(){
+            console.log(`{this.name}`)
+      }
+}
 
 
 
